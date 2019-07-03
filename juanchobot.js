@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const  client = new Discord.Client();
 const config = require("./config.json");
 
-
 client.on("ready", () => {
     console.log("Altoke perri!");
     client.user.setPresence( {
@@ -13,7 +12,7 @@ client.on("ready", () => {
         }
     });
 });
-//git st
+
 var prefix = config.prefix;
 
 client.on("message", (message) => {
@@ -34,12 +33,32 @@ client.on("message", (message) => {
     if (message.content.includes("puto")) {
         message.channel.send("tu vieja");
     }
+    if (message.content.includes("time!")) {
+        //Crea la hora.
+        momentoActual = new Date();
+        hora = momentoActual.getHours();
+        minuto = momentoActual.getMinutes();
+        segundo = momentoActual.getSeconds();
+        horaImprimible = hora + " : " + minuto + " : " + segundo;
+        message.channel.send(("Son las " + horaImprimible ));
 
-    //pirulo 2.0
-    //cambiate chota
+    }
+
+    if (message.content.startsWith(prefix +"time" )){
+        const embed = new Discord.RichEmbed()
+            .setTitle("Hora")
+            .setAuthor(message.author.username, message.author.avatarURL)
+            .setColor(0x00AE86)
+            .setDescription("La hora es" )
+            .setThumbnail(message.author.avatarURL)
+            .setTimestamp()
 
 
+        message.channel.send({embed});
+    }
 });
+
+
 
 client.on("guildMemberAdd", (member) => {
     console.log(`Nuevo usuario:  ${member.user.username} se ha unido a ${member.guild.name}.`);
