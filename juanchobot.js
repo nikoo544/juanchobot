@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const  client = new Discord.Client();
 const config = require("./config.json");
 
+
 client.on("ready", () => {
     console.log("Altoke perri!");
     client.user.setPresence( {
@@ -33,6 +34,9 @@ client.on("message", (message) => {
     if (message.content.includes("puto")) {
         message.channel.send("tu vieja");
     }
+
+    //pirulo
+
 
 });
 
