@@ -35,7 +35,8 @@ client.on("message", (message) => {
         message.channel.send("tu vieja");
     }
 
-    //pirulo
+    //pirulo 2.0
+    //cambiate chota
 
 
 });
