@@ -33,6 +33,7 @@ client.on("message", (message) => {
     if (message.content.includes("puto")) {
         message.channel.send("tu vieja");
     }
+
     if (message.content.includes("time!")) {
         //Crea la hora.
         momentoActual = new Date();
@@ -53,7 +54,10 @@ client.on("message", (message) => {
             .setThumbnail(message.author.avatarURL)
             .setTimestamp()
 
-
+    if (message.content.includes("sale")) {
+        message.channel.send("que queres carrito");
+    }
+    
         message.channel.send({embed});
     }
 });
