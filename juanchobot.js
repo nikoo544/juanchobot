@@ -34,9 +34,9 @@ client.on("message", (message) => {
     if (message.content.includes("puto")) {
         message.channel.send("tu vieja");
     }
-
-    //pirulo 2.0
-    //cambiate chota
+    if (message.content.includes("sale")) {
+        message.channel.send("que queres carrito");
+    }
 
 
 });
