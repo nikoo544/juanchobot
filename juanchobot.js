@@ -13,7 +13,7 @@ client.on("ready", () => {
         }
     });
 });
-
+//git st
 var prefix = config.prefix;
 
 client.on("message", (message) => {
