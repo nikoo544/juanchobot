@@ -31,6 +31,10 @@ client.on("message", (message) => {
         message.channel.send("tu vieja");
     }
 
+    if (message.content.includes("sale")) {
+        message.channel.send("que quere carrito?");
+    }
+
     if (message.content.includes("time!")) {
         momentoActual = new Date();
         hora = momentoActual.getHours();
@@ -45,12 +49,12 @@ client.on("message", (message) => {
             .setTitle("Sale")
             .setAuthor(message.author.username, message.author.avatarURL)
             .setColor(0x00AE86)
-            .setDescription("La hora es" )
-            .setThumbnail(message.author.avatarURL)
+            .setDescription("" )
+            .setThumbnail("http://www.shonengamez.com/wp-content/uploads/2018/03/JotaroFrenchBread.png")
             .setTimestamp()
         message.channel.send({embed});
     }
-    if (message.content.includes("sale")) {
+    if (message.content.includes("salee")) {
         message.channel.send("que queres carrito");
     }
 });
@@ -59,7 +63,7 @@ client.on("message", (message) => {
 
 client.on("guildMemberAdd", (member) => {
     console.log(`Nuevo usuario:  ${member.user.username} se ha unido a ${member.guild.name}.`);
-    var canal = client.channels.get('595472506387693573');
+    var canal = client.channels.get('595773757784588298');
     canal.send(`El adoptado de ${member.user}, se ha unido al grupo.`);
 });
 client.login(config.token);
