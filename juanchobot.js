@@ -20,9 +20,6 @@ client.on("message", (message) => {
     if (message.author.bot) return;
     if (message.content.startsWith("hola juani")) {
         message.channel.send("puto");
-    } else
-    if (message.content.startsWith(prefix + "hola")) {
-        message.channel.send("Hola que tal?");
     }
     if (message.content.includes("4")) {
         message.channel.send("te puse");
@@ -35,30 +32,26 @@ client.on("message", (message) => {
     }
 
     if (message.content.includes("time!")) {
-        //Crea la hora.
         momentoActual = new Date();
         hora = momentoActual.getHours();
         minuto = momentoActual.getMinutes();
         segundo = momentoActual.getSeconds();
         horaImprimible = hora + " : " + minuto + " : " + segundo;
-        message.channel.send(("Son las " + horaImprimible ));
-
+        message.channel.send("Son las " + horaImprimible );
     }
 
-    if (message.content.startsWith(prefix +"time" )){
+    if (message.content.startsWith("sale!" )){
         const embed = new Discord.RichEmbed()
-            .setTitle("Hora")
+            .setTitle("Sale")
             .setAuthor(message.author.username, message.author.avatarURL)
             .setColor(0x00AE86)
             .setDescription("La hora es" )
             .setThumbnail(message.author.avatarURL)
             .setTimestamp()
-
+        message.channel.send({embed});
+    }
     if (message.content.includes("sale")) {
         message.channel.send("que queres carrito");
-    }
-    
-        message.channel.send({embed});
     }
 });
 
